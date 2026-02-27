@@ -31,15 +31,13 @@ rocket_type = st.radio(
 data = grad_small if rocket_type == "1" else grad_large
 col1, col2 = st.columns(2)
 with col1:
-    st.subheader("Позиция РСЗО", anchor=False)
     grad_x = st.number_input("X РСЗО", value=0)
     grad_y = st.number_input("Y РСЗО", value=0)
-    grad_z = st.number_input("Z РСЗО", value=0)
+    grad_z = st.number_input("Высота РСЗО", value=0)
 with col2:
-    st.subheader("Позиция противника", anchor=False)
-    enemy_x = st.number_input("X ПРОТИВНИКА", value=0)
-    enemy_y = st.number_input("Y ПРОТИВНИКА", value=0)
-    enemy_z = st.number_input("Z ПРОТИВНИКА", value=0)
+    enemy_x = st.number_input("X Цели", value=0)
+    enemy_y = st.number_input("Y Цели", value=0)
+    enemy_z = st.number_input("Высота цели", value=0)
 if st.button("Рассчитать", type="primary"):
     try:
         elevation = int(enemy_z - grad_z)
